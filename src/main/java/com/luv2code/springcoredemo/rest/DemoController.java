@@ -13,8 +13,9 @@ public class DemoController {
     private Coach myCoach;
 
 
-   @Autowired
-    public DemoController( Coach thecoach) {
+    @Autowired
+    public DemoController(@Qualifier("cricketCoach") Coach thecoach) {
+        System.out.println("In constructor:" + getClass().getSimpleName());
         this.myCoach = thecoach;
     }
 
